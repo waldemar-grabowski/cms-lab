@@ -23,4 +23,7 @@ flowchart TD
   M(["Menu glowne"])
   M --> H["Strona glowna<br>/"]
   M --> U["Uslugi<br>/uslugi/"]
+  M --> F["Dla firm<br>/dla-firm/"]
+  M --> W["Umow wizyte<br>/umow-wizyte/"]
+  
 ```
