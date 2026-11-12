@@ -1,0 +1,43 @@
+# WordPress + MariaDB (GitHub Codespaces)
+
+services:
+  db:
+    image: mariadb:11
+    environment:
+      MARIADB_DATABASE: wordpress
+      MARIADB_USER: wp
+      MARIADB_PASSWORD: lab               # TODO: zmień (tylko lab)
+      MARIADB_ROOT_PASSWORD: root_haslo
+    volumes:
+
+db_data:/var/lib/mysql
+  healthcheck:
+    test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+    interval: 5s
+    timeout: 5s
+    retries: 20
+
+  wordpress:
+    image: wordpress:php8.3-apache
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+
+"8080:80"                         # port przekierowany przez Codespaces
+  environment:
+    WORDPRESS_DB_HOST: db
+    WORDPRESS_DB_USER: wp
+    WORDPRESS_DB_PASSWORD: lab
+    WORDPRESS_DB_NAME: wordpress
+    WORDPRESS_CONFIG_EXTRA: |
+      if (isset($$_SERVER['HTTP_X_FORWARDED_HOST'])) {$$_SERVER['HTTP_HOST'] = $$_SERVER['HTTP_X_FORWARDED_HOST'];}
+      if (isset($$_SERVER['HTTP_X_FORWARDED_PROTO']) && strpos($$_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') !== false) {$$_SERVER['HTTPS'] = 'on';}
+      if (isset($$_SERVER['HTTP_HOST'])) {
+          define('WP_HOME', 'https://' . $$_SERVER['HTTP_HOST']);
+          define('WP_SITEURL', 'https://' . $$_SERVER['HTTP_HOST']);}
+  volumes:
+./wp-content:/var/www/html/wp-content   # motywy/wtyczki w repozytorium
+
+volumes:
+  db_data:
