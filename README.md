@@ -21,5 +21,6 @@
 ```mermaid
 flowchart TD
   M(["Menu glowne"])
-  M -> H["Strona glowna<br>/"]
-  M -> U["Uslugi<br>/uslugi/"]
+  M --> H["Strona glowna<br>/"]
+  M --> U["Uslugi<br>/uslugi/"]
+```
