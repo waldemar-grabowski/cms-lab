@@ -25,5 +25,8 @@ flowchart TD
   M --> U["Uslugi<br>/uslugi/"]
   M --> F["Dla firm<br>/dla-firm/"]
   M --> W["Umow wizyte<br>/umow-wizyte/"]
-  
+  M --> K["Kontakt<br>/kontakt/"]
+  M --> P["Polityka prywatnosci<br>/polityka-prywatnosci/"]
+  U --> U1["Mechanika i diagnostyka<br>/uslugi/mechanika-diagnostyka/"]
+  U --> U2["Opony i klimatyzacja<br>/uslugi/opony-klimatyzacja/"]
 ```
