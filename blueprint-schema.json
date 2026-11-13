@@ -1,6 +1,7 @@
 {
   "$schema": "https://playground.wordpress.net/blueprint-schema.json",
-  "landingPage": "/wp-admin/",
+  "landingPage": "/",
+  "login": true,
   "steps": [
     {
       "step": "installTheme",
@@ -8,7 +9,9 @@
         "resource": "wordpress.org/themes",
         "slug": "twentytwentyfive"
       },
-      "options": { "activate": true }
+      "options": {
+        "activate": true
+      }
     },
     {
       "step": "installPlugin",
@@ -16,7 +19,19 @@
         "resource": "wordpress.org/plugins",
         "slug": "contact-form-7"
       },
-      "options": { "activate": true }
+      "options": {
+        "activate": true
+      }
+    },
+    {
+      "step": "installPlugin",
+      "pluginData": {
+        "resource": "wordpress.org/plugins",
+        "slug": "bookly-responsive-appointment-booking-tool"
+      },
+      "options": {
+        "activate": true
+      }
     },
     {
       "step": "setSiteOptions",
@@ -24,6 +39,54 @@
         "blogname": "Auto-Serwis Waldi",
         "blogdescription": "Auto-Serwis Waldi - Szybko, Tanio i Rzetelnie",
         "permalink_structure": "/%postname%/"
+      }
+    },
+    {
+      "step": "setSiteLanguage",
+      "language": "pl_PL"
+    },
+    {
+      "step": "wp-cli",
+      "command": "wp post delete 2 3 --force"
+    },
+    {
+      "step": "wp-cli",
+      "command": "wp post create --post_type=page --import_id=101 --post_title='Strona główna' --post_name=strona-glowna --menu_order=1 --post_status=publish"
+    },
+    {
+      "step": "wp-cli",
+      "command": "wp post create --post_type=page --import_id=102 --post_title='Usługi' --post_name=uslugi --menu_order=2 --post_status=publish"
+    },
+    {
+      "step": "wp-cli",
+      "command": "wp post create --post_type=page --import_id=103 --post_parent=102 --post_title='Mechanika i diagnostyka' --post_name=mechanika-diagnostyka --menu_order=1 --post_status=publish"
+    },
+    {
+      "step": "wp-cli",
+      "command": "wp post create --post_type=page --import_id=104 --post_parent=102 --post_title='Opony i klimatyzacja' --post_name=opony-klimatyzacja --menu_order=2 --post_status=publish"
+    },
+    {
+      "step": "wp-cli",
+      "command": "wp post create --post_type=page --import_id=105 --post_title='Dla firm' --post_name=dla-firm --menu_order=3 --post_status=publish"
+    },
+    {
+      "step": "wp-cli",
+      "command": "wp post create --post_type=page --import_id=106 --post_title='Umów wizytę' --post_name=umow-wizyte --menu_order=4 --post_status=publish"
+    },
+    {
+      "step": "wp-cli",
+      "command": "wp post create --post_type=page --import_id=107 --post_title='Kontakt' --post_name=kontakt --menu_order=5 --post_status=publish"
+    },
+    {
+      "step": "wp-cli",
+      "command": "wp post create --post_type=page --import_id=108 --post_title='Polityka prywatności' --post_name=polityka-prywatnosci --menu_order=6 --post_status=publish"
+    },
+    {
+      "step": "setSiteOptions",
+      "options": {
+        "show_on_front": "page",
+        "page_on_front": 101,
+        "wp_page_for_privacy_policy": 108
       }
     }
   ]
