@@ -34,3 +34,6 @@ flowchart TD
 
 ## Dlaczego WordPress
 Super popularny, słyszałem i spotkałem się z WordPressem, jeszcze zanim rozpocząłem studia. Z doświadczenia z Open Source, za popularnością idzie także bezpieczeństwo i ilość motywów/pluginów. Łatwość uruchomienia i konfiguracji.
+
+## Użycie AI w projekcie
+- **Pomoc** - Ogólna pomoc oraz wygenerowanie pliku `.svg`.

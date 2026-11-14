@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="712" viewBox="0 0 680 712" font-family="Inter, Arial, sans-serif">
+  <title>Wireframe strony głównej Auto-Serwis Waldi</title>
+  <rect width="680" height="712" fill="#FFFFFF"/>
+
+  <!-- Nagłówek -->
+  <rect x="40" y="20" width="600" height="48" rx="4" fill="#FFFFFF" stroke="#B4B2A9" stroke-width="0.5"/>
+  <text x="56" y="49" font-size="14" font-weight="500" fill="#1F1F1E">Auto-Serwis Waldi</text>
+  <text x="250" y="48" font-size="12" fill="#1F1F1E">Strona główna</text>
+  <text x="350" y="48" font-size="12" fill="#1F1F1E">Usługi</text>
+  <text x="400" y="48" font-size="12" fill="#1F1F1E">Dla firm</text>
+  <text x="465" y="48" font-size="12" fill="#1F1F1E">Kontakt</text>
+  <rect x="530" y="30" width="106" height="28" rx="6" fill="#B5D4F4" stroke="#85B7EB" stroke-width="0.5"/>
+  <text x="583" y="49" font-size="14" font-weight="500" text-anchor="middle" fill="#1F1F1E">Umów wizytę</text>
+
+  <!-- Hero -->
+  <rect x="40" y="84" width="600" height="170" rx="4" fill="#FFFFFF" stroke="#B4B2A9" stroke-width="0.5"/>
+  <text x="72" y="135" font-size="14" font-weight="500" fill="#1F1F1E">Naprawa i diagnostyka samochodów</text>
+  <text x="72" y="158" font-size="12" fill="#1F1F1E">Osobowe i dostawcze do 3.5 t, także dla małych firm</text>
+  <rect x="72" y="178" width="200" height="40" rx="8" fill="#B5D4F4" stroke="#85B7EB" stroke-width="0.5"/>
+  <text x="172" y="203" font-size="14" font-weight="500" text-anchor="middle" fill="#1F1F1E">Umów wizytę online</text>
+  <rect x="440" y="100" width="180" height="138" rx="4" fill="#FFFFFF" stroke="#B4B2A9" stroke-width="0.5"/>
+  <text x="530" y="173" font-size="12" text-anchor="middle" fill="#1F1F1E">Zdjęcie warsztatu</text>
+
+  <!-- Usługi i korzyści -->
+  <text x="40" y="291" font-size="14" font-weight="500" fill="#1F1F1E">Usługi i korzyści</text>
+
+  <rect x="40" y="300" width="200" height="130" rx="8" fill="#FFFFFF" stroke="#B4B2A9" stroke-width="0.5"/>
+  <text x="56" y="331" font-size="14" font-weight="500" fill="#1F1F1E">Mechanika i diagnostyka</text>
+  <text x="56" y="356" font-size="12" fill="#1F1F1E">Kontrolki silnika</text>
+  <text x="56" y="374" font-size="12" fill="#1F1F1E">Naprawy i przeglądy</text>
+  <text x="56" y="414" font-size="12" fill="#1F1F1E">Więcej →</text>
+
+  <rect x="240" y="300" width="200" height="130" rx="8" fill="#FFFFFF" stroke="#B4B2A9" stroke-width="0.5"/>
+  <text x="256" y="331" font-size="14" font-weight="500" fill="#1F1F1E">Opony i klimatyzacja</text>
+  <text x="256" y="356" font-size="12" fill="#1F1F1E">Wymiana i wyważanie</text>
+  <text x="256" y="374" font-size="12" fill="#1F1F1E">Serwis klimatyzacji</text>
+  <text x="256" y="414" font-size="12" fill="#1F1F1E">Więcej →</text>
+
+  <rect x="440" y="300" width="200" height="130" rx="8" fill="#FFFFFF" stroke="#B4B2A9" stroke-width="0.5"/>
+  <text x="456" y="331" font-size="14" font-weight="500" fill="#1F1F1E">Obsługa flot</text>
+  <text x="456" y="356" font-size="12" fill="#1F1F1E">Stała opieka nad flotą</text>
+  <text x="456" y="374" font-size="12" fill="#1F1F1E">Oferta dla małych firm</text>
+  <text x="456" y="414" font-size="12" fill="#1F1F1E">Więcej →</text>
+
+  <!-- Opinie klientów -->
+  <text x="40" y="471" font-size="14" font-weight="500" fill="#1F1F1E">Opinie klientów</text>
+
+  <rect x="40" y="480" width="200" height="110" rx="8" fill="#FFFFFF" stroke="#B4B2A9" stroke-width="0.5"/>
+  <text x="56" y="512" font-size="12" fill="#1F1F1E">„Cytat klienta, 2 zdania”</text>
+  <text x="56" y="536" font-size="12" fill="#1F1F1E">Ocena: 5/5</text>
+  <text x="56" y="570" font-size="12" fill="#1F1F1E">Imię, model auta</text>
+
+  <rect x="240" y="480" width="200" height="110" rx="8" fill="#FFFFFF" stroke="#B4B2A9" stroke-width="0.5"/>
+  <text x="256" y="512" font-size="12" fill="#1F1F1E">„Cytat klienta, 2 zdania”</text>
+  <text x="256" y="536" font-size="12" fill="#1F1F1E">Ocena: 5/5</text>
+  <text x="256" y="570" font-size="12" fill="#1F1F1E">Imię, model auta</text>
+
+  <rect x="440" y="480" width="200" height="110" rx="8" fill="#FFFFFF" stroke="#B4B2A9" stroke-width="0.5"/>
+  <text x="456" y="512" font-size="12" fill="#1F1F1E">„Cytat klienta, 2 zdania”</text>
+  <text x="456" y="536" font-size="12" fill="#1F1F1E">Ocena: 5/5</text>
+  <text x="456" y="570" font-size="12" fill="#1F1F1E">Imię, model auta</text>
+
+  <!-- Stopka -->
+  <rect x="40" y="612" width="600" height="80" rx="4" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="0.5"/>
+  <text x="60" y="641" font-size="14" font-weight="500" fill="#1F1F1E">Auto-Serwis Waldi</text>
+  <text x="60" y="664" font-size="12" fill="#1F1F1E">Polityka prywatności · Kontakt · Dla firm · Usługi</text>
+  <text x="60" y="682" font-size="12" fill="#1F1F1E">Adres, telefon, godziny otwarcia</text>
+</svg>
