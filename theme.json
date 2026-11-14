@@ -1,0 +1,106 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"settings": {
+		"color": {
+			"palette": [
+				{
+					"slug": "base",
+					"color": "#222222",
+					"name": "Tło"
+				},
+				{
+					"slug": "contrast",
+					"color": "#EAF2F1",
+					"name": "Tekst"
+				},
+				{
+					"slug": "accent-1",
+					"color": "#FF9B5E",
+					"name": "Marka (pomarańcz)"
+				},
+				{
+					"slug": "accent-4",
+					"color": "#B2B9BD",
+					"name": "Tekst drugorzędny"
+				},
+				{
+					"slug": "accent-5",
+					"color": "#363537",
+					"name": "Akcent – tło kart"
+				},
+				{
+					"slug": "accent-6",
+					"color": "#696D77",
+					"name": "Obramowania"
+				}
+			]
+		},
+		"typography": {
+			"fontSizes": [
+				{
+					"slug": "small",
+					"size": "0.875rem",
+					"name": "Mały",
+					"fluid": false
+				},
+				{
+					"slug": "medium",
+					"size": "1.0625rem",
+					"name": "Średni",
+					"fluid": false
+				},
+				{
+					"slug": "large",
+					"size": "clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem)",
+					"name": "Duży",
+					"fluid": false
+				},
+				{
+					"slug": "x-large",
+					"size": "clamp(1.6rem, 1.3rem + 1.4vw, 2.25rem)",
+					"name": "Bardzo duży",
+					"fluid": false
+				},
+				{
+					"slug": "xx-large",
+					"size": "clamp(2rem, 1.5rem + 2.5vw, 3.25rem)",
+					"name": "Tytuł",
+					"fluid": false
+				}
+			]
+		},
+		"spacing": {
+			"units": [
+				"px",
+				"rem",
+				"%",
+				"vw"
+			]
+		}
+	},
+	"styles": {
+		"color": {
+			"background": "var(--wp--preset--color--base)",
+			"text": "var(--wp--preset--color--accent-4)"
+		},
+		"elements": {
+			"heading": {
+				"color": {
+					"text": "var(--wp--preset--color--contrast)"
+				}
+			},
+			"link": {
+				"color": {
+					"text": "currentColor"
+				}
+			},
+			"button": {
+				"color": {
+					"background": "var(--wp--preset--color--accent-1)",
+					"text": "var(--wp--preset--color--base)"
+				}
+			}
+		}
+	}
+}

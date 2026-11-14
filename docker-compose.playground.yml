@@ -1,0 +1,18 @@
+# Lokalne uruchomienie eksportu z WordPress Playground (SQLite, bez MariaDB)
+# Start: docker compose -f docker-compose.playground.yml up -d  →  http://localhost:8081
+
+services:
+  wordpress:
+    image: wordpress:php8.3-apache
+    ports:
+      - "8081:80"
+    environment:
+      WORDPRESS_DEBUG: "1"
+      WORDPRESS_CONFIG_EXTRA: |
+        define('DB_DIR', '/var/www/html/wp-content/database/.ht.16c589a5c1f74a6635b75f36b819948f/');
+        define('DB_FILE', '.ht.sqlite');
+        define('WP_HOME', 'http://localhost:8081');
+        define('WP_SITEURL', 'http://localhost:8081');
+        define('WP_DEBUG_DISPLAY', false);
+    volumes:
+      - ./playground/wp-content:/var/www/html/wp-content
