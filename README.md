@@ -1,21 +1,14 @@
 # Auto-Serwis Waldi
 
-*Nazwa* - Auto-Serwis Waldi
-*Oferta* - Naprawa oraz diagnostyka samochodów osobowych i dostawczych do 3.5t
-*Grupa docelowa* - Klienci prywatni oraz małe firmy.
+Projekt strony warsztatu samochodowego na WordPressie. Oferta: naprawa i diagnostyka samochodów osobowych i dostawczych do 3.5t. Klienci: prywatni oraz małe firmy.
 
 ## Persony
+
 ### Klient prywatny
-- **Cel** - Umówić się na diagnostykę, kontrolki silnika.
-- **Problem** - Nie ma czasu zadzwonić w godzinach pracy warsztatu.
-- **Urządzenie** - smartfon.
-- **CTA** - **"Umów wizytę online"**
+Chce umówić się na diagnostykę, bo zapaliła mu się kontrolka silnika. Nie ma czasu dzwonić w godzinach pracy warsztatu, więc wchodzi na stronę ze smartfona. CTA: „Umów wizytę online”.
 
 ### Klient flotowy
-- **Cel** - Partnerstwo z warsztatem który będzie dbał o flotę.
-- **Problem** - Samochody jeżdżą do różnych warsztatów, co stwarza problemy z organizacją.
-- **Urządzenie** - Komputer w biurze.
-- **CTA** - **"Zapytaj o ofertę dla firm"**
+Szuka warsztatu, który zajmie się całą flotą, zamiast wozić auta po różnych miejscach i gubić się w organizacji. Wchodzi z komputera w biurze. CTA: „Zapytaj o ofertę dla firm”.
 
 ## Mapa strony
 ```mermaid
@@ -37,46 +30,47 @@ flowchart TD
 ```
 
 ## Struktura treści
-- **Bezpośrednie odnośniki** - `/%postname%/` (nazwa wpisu).
-- **Strona główna** - statyczna (`/`), wpisy na stronie **Aktualności** (Ustawienia > Czytanie).
-- **Kategorie** - Porady, Z warsztatu.
-- **Wpisy** - „Kontrolka check engine – co oznacza i co zrobić?” (Porady), „Przygotuj auto do zimy” (Porady), „Rezerwacja wizyt online – wkrótce” (Z warsztatu).
+Bezpośrednie odnośniki: `/%postname%/` (sama nazwa wpisu). Strona główna jest statyczna (`/`), a wpisy wylądowały na stronie Aktualności (Ustawienia > Czytanie). Kategorie: Porady i Z warsztatu. Wpisy: „Kontrolka check engine – co oznacza i co zrobić?” oraz „Przygotuj auto do zimy” w Poradach, „Rezerwacja wizyt online – wkrótce” w Z warsztatu.
 
 ## Strona główna (według `wireframe.svg`)
+
 | Sekcja | Bloki |
 |---|---|
 | Hero | Okładka → Tytuł (H1), Akapit, Przyciski (CTA „Umów wizytę online”) |
 | Usługi i korzyści | Grupa → H2, Kolumny (3 × karta: H3, Lista, link) – wcześniej Tabela, zamieniona po audycie WAVE (*Layout table*) |
 | Opinie klientów | Grupa → H2, Kolumny (3 × Grupa-karta z Cytatem) – przykładowe opinie, oznaczone na stronie jako wygenerowane przez AI |
 
-Jeden H1, kolejność nagłówków H1 → H2 → H3. Szablon „Strona bez tytułu”, żeby tytuł strony nie dublował H1.
+Na stronie jest jeden H1, a kolejność nagłówków to H1 → H2 → H3. Użyłem szablonu „Strona bez tytułu”, żeby tytuł strony nie dublował H1.
 
 ## Nagłówek, stopka i wzorzec
-- **Nagłówek** - logo + nazwa witryny, Nawigacja „Menu główne” (Strona główna, Usługi z podstronami, Dla firm, Aktualności, Kontakt), przycisk „Umów wizytę”.
-- **Stopka** - nazwa i slogan, dane kontaktowe (adres, telefon, e-mail, godziny otwarcia), „Menu stopki” z linkiem do Polityki prywatności.
-- **Wzorzec** - „Hero – Auto-Serwis Waldi” (niezsynchronizowany, kategoria Auto-Serwis), zapisany z Okładki strony głównej i wstawiony na stronie **Oferta** (`/oferta/`). Blok Tytuł w Okładce pokazuje tytuł danej strony jako H1.
+W nagłówku logo z nazwą witryny, menu główne (Strona główna, Usługi z podstronami, Dla firm, Aktualności, Kontakt) i przycisk „Umów wizytę”. Stopka: nazwa i slogan, dane kontaktowe (adres, telefon, e-mail, godziny otwarcia) oraz „Menu stopki” z linkiem do Polityki prywatności.
 
+Wzorzec „Hero – Auto-Serwis Waldi” (kategoria Auto-Serwis, niez synchronizowany) zapisałem z Okładki strony głównej i wstawiłem na stronie **Oferta** (`/oferta/`). Blok Tytuł w Okładce pokazuje tytuł danej strony jako H1, więc wzorzec pasuje też tam.
 
 ## Dlaczego WordPress
-Super popularny, słyszałem i spotkałem się z WordPressem, jeszcze zanim rozpocząłem studia. Z doświadczenia z Open Source, za popularnością idzie także bezpieczeństwo i ilość motywów/pluginów. Łatwość uruchomienia i konfiguracji.
+Super popularny, słyszałem i spotkałem się z WordPressem, jeszcze zanim rozpocząłem studia. Z doświadczenia z Open Source: za popularnością idzie bezpieczeństwo i ilość motywów/pluginów. No i łatwość uruchomienia i konfiguracji.
+
+Według W3Techs (październik 2026) WordPress napędza 40,2% wszystkich stron i ma 58,7% rynku CMS – dla porównania Wix 6,1%, Shopify 7,8%, Drupal 0,6%. Wix i Shopify to SaaS: abonament, mniej kontroli i uzależnienie od dostawcy, a Drupal pasuje do dużych portali i sektora publicznego, nie do strony lokalnego warsztatu. Dlatego WordPress: darmowy, self-hosted, z ekosystemem, który już znam.
 
 ## Użycie AI w projekcie
-**Narzędzie:** Claude Code (Anthropic) – asystent w terminalu z dostępem do repozytorium i lokalnego WordPressa.
+Narzędziem był Claude Code (Anthropic) – asystent w terminalu z dostępem do repozytorium i lokalnego WordPressa.
 
-**Moje decyzje i praca:** persony, mapa strony, układ strony głównej (Okładka ze zdjęciem, usługi, opinie), wybór palety (mój motyw Spectagon) i zdjęcia z Pexels, ocena kolejnych wersji i poprawki wyglądu (m.in. odrzucona pierwsza wersja strony głównej, wyśrodkowanie i rozmiar tekstu na stronie Usługi), audyt WAVE, przegląd i akceptacja zmian.
+Osobiście zrobiłem: persony, mapę strony, układ strony głównej (Okładka ze zdjęciem, usługi, opinie), wybór palety (mój motyw Spectagon) i zdjęć z Pexels, ocenę kolejnych wersji i poprawki wyglądu (m.in. odrzuciłem pierwszą wersję strony głównej; wyśrodkowanie i rozmiar tekstu na stronie Usługi), audyt WAVE, przegląd i akceptację zmian.
 
-**Do czego użyłem AI:**
-- wygenerowanie pliku `wireframe.svg` i ogólna pomoc,
-- teksty pomocnicze: 3 wpisy w Aktualnościach, opisy na stronach Usługi, Oferta i Kontakt, szkic polityki prywatności (do weryfikacji – firma i dane są fikcyjne),
-- przykładowe opinie klientów (oznaczone na stronie),
-- kod: plik wzorca `patterns/hero-cta.php`, `theme.json`, Dodatkowy CSS, formularz CF7 z komunikatami,
-- obliczenia kontrastu, uruchomienie Lighthouse (pliki w [`raport/`](raport/), podsumowanie [`lighthouse-podsumowanie.md`](raport/lighthouse-podsumowanie.md)) i poprawki zgłoszone przez Lighthouse/WAVE,
-- pomoc w redakcji tego README (tabele, lista źródeł, opis B1).
+AI użyłem do:
+- wygenerowania pliku `wireframe.svg` i ogólnej pomocy,
+- tekstów pomocniczych: 3 wpisów w Aktualnościach, opisów na stronach Usługi, Oferta i Kontakt, szkicu polityki prywatności (do weryfikacji – firma i dane są fikcyjne),
+- przykładowych opinii klientów (oznaczonych na stronie),
+- kodu: pliku wzorca `patterns/hero-cta.php`, `theme.json`, Dodatkowego CSS, formularza CF7 z komunikatami,
+- obliczeń kontrastu, uruchomienia Lighthouse (pliki w [`raport/`](raport/), podsumowanie [`lighthouse-podsumowanie.md`](raport/lighthouse-podsumowanie.md)) i poprawek zgłoszonych przez Lighthouse/WAVE,
+- pomocy w redakcji tego README (tabele, lista źódeł, opis B1).
 
-**Weryfikacja:** zmiany sprawdzane w przeglądarce i na zrzutach ekranu (komputer i telefon); wyniki audytów są w [`raport/`](raport/) (opis zawartości: [`raport/README.md`](raport/README.md)). Plik `raport/lighthouse/pierwszy-testowy-pomiar.html` to mój pierwszy, testowy pomiar stanu po zmianach.
+Później, przy kończeniu projektu, użyłem agenta w terminalu (Hermes): poprawił separator dziesiętny (3.5 t → 3,5 t) w bazie eksportu ZIP, przepakował eksport, zredagował formatowanie tego README i raportu dostępności (treść liczbowa bez zmian), wygenerował ponownie PDF raportu, odświeżył zrzuty strony głównej i Oferty oraz przeprowadził automatyczny test struktury drzewa dostępności (B2). Słuchowy test VoiceOver zrobiłem sam.
+
+Każdą zmianę sprawdzałem w przeglądarce i na zrzutach ekranu (komputer i telefon). Wyniki audytów są w [`raport/`](raport/) (opis zawartości: [`raport/README.md`](raport/README.md)). Plik `raport/lighthouse/pierwszy-testowy-pomiar.html` to mój pierwszy, testowy pomiar stanu po zmianach.
 
 ## Style globalne i kontrast (L3 G1)
-Paleta na bazie mojego motywu terminala/edytora **Monokai Pro Spectagon** (ciemne tło Spectrum + akcenty Octagon, plik `nixconfig-global`). Pomarańcz marki pasuje do zdjęcia warsztatu. Ten sam zapis w [`theme.json`](theme.json) (do motywu w L4).
+Paleta bierze się z mojego motywu terminala/edytora **Monokai Pro Spectagon** (ciemne tło Spectrum i akcenty Octagon, plik `nixconfig-global`). Pomarańcz marki pasuje do zdjęcia warsztatu. Ten sam zapis jest w [`theme.json`](theme.json) (przyda się do motywu w L4).
 
 | Kolor | Slug | Wartość |
 |---|---|---|
@@ -87,15 +81,19 @@ Paleta na bazie mojego motywu terminala/edytora **Monokai Pro Spectagon** (ciemn
 | Akcent – tło kart | `accent-5` | `#363537` |
 | Obramowania (techniczny) | `accent-6` | `#696D77` |
 
+Kontrast liczyłem dla każdej pary tekst/tło:
+
 | Para tekst / tło | Kolory | Kontrast | WCAG AA |
 |---|---|---|---|
-| Nagłówki / tło | `#EAF2F1` / `#222222` | 13,99:1 | ✅ |
-| Tekst akapitu / tło | `#B2B9BD` / `#222222` | 8,01:1 | ✅ |
-| Tekst w kartach opinii / tło kart | `#B2B9BD` / `#363537` | 6,14:1 | ✅ |
-| Przycisk: tekst / kolor marki | `#222222` / `#FF9B5E` | 7,65:1 | ✅ (jasny tekst na pomarańczu nie przeszedłby – zmieniony na ciemny) |
-| Stopka: tekst / tło | `#EAF2F1` / `#131313` | 16,34:1 | ✅ |
-| Obramowania / tło (element UI, wymóg 3:1) | `#696D77` / `#222222` | 3,07:1 | ✅ |
-| Okładka: biały tekst / nakładka | `#FFFFFF` / `#393232` (50%) | 12,53:1* | ✅ |
+| Nagłówki / tło | `#EAF2F1` / `#222222` | 13,99:1 | spełnia |
+| Tekst akapitu / tło | `#B2B9BD` / `#222222` | 8,01:1 | spełnia |
+| Tekst w kartach opinii / tło kart | `#B2B9BD` / `#363537` | 6,14:1 | spełnia |
+| Przycisk: tekst / kolor marki | `#222222` / `#FF9B5E` | 7,65:1 | spełnia |
+| Stopka: tekst / tło | `#EAF2F1` / `#131313` | 16,34:1 | spełnia |
+| Obramowania / tło (element UI, wymóg 3:1) | `#696D77` / `#222222` | 3,07:1 | spełnia |
+| Okładka: biały tekst / nakładka | `#FFFFFF` / `#393232` (70%) | 12,53:1* | spełnia |
+
+Przycisk wymagał jedynego kompromisu: jasny tekst na pomarańczu nie osiągnąłby 4,5:1, więc tekst przycisku zrobiłem ciemny.
 
 \* dla samej nakładki; na jaśniejszych fragmentach zdjęcia kontrast jest niższy – sprawdzić w Lighthouse (G3).
 
@@ -113,19 +111,31 @@ Paleta na bazie mojego motywu terminala/edytora **Monokai Pro Spectagon** (ciemn
 | Wtyczka SQLite Database Integration 3.1.3 | Baza danych (WordPress Playground) | The WordPress Team | GPLv2 lub nowsza | [wordpress.org/plugins/sqlite-database-integration](https://wordpress.org/plugins/sqlite-database-integration/) |
 | Paleta kolorów | Style globalne, `theme.json` | na bazie motywu Monokai Pro (filtr „Spectagon” – własna mieszanka Spectrum + Octagon) | kolory, nie podlegają licencji | – |
 
-**Fonty hostowane lokalnie** – Manrope i Fira Code są dostarczane z motywem (`themes/twentytwentyfive/assets/fonts/`) i ładowane z serwera strony; strona nie łączy się z Google Fonts (RODO).
+Fonty są hostowane lokalnie: Manrope i Fira Code dostarcza motyw (`themes/twentytwentyfive/assets/fonts/`) i ładują się z serwera strony, więc nie ma połączenia z Google Fonts (RODO).
 
 ## Dostępny formularz kontaktowy (L3 B1)
 Formularz Contact Form 7 na stronie [Kontakt](/kontakt/), zbudowany według startera.
 
-- **Widoczne etykiety** – każde pole jest w `<label>`, wymagane pola oznaczone **tekstem** („(wymagane)”), nie tylko gwiazdką czy kolorem; dodatkowo `aria-required="true"`.
-- **Autouzupełnianie** – `autocomplete="name"`, `"email"`, `"tel"` (WCAG 1.3.5 Określenie pożądanego wkładu).
-- **Zgoda RODO** – pole `[acceptance]` **niezaznaczone domyślnie**, z linkiem do polityki prywatności. Ustawienie `acceptance_as_validation: on`: przycisk „Wyślij” jest zawsze aktywny, a brak zgody daje komunikat błędu (domyślnie CF7 wyłącza przycisk – wyłączony przycisk jest pomijany przez klawisz Tab i nie mówi, czego brakuje).
-- **Komunikaty błędów po polsku i z podpowiedzią** (WCAG 3.3.1, 3.3.3) – np. „Wpisz poprawny adres e-mail, np. jan@przyklad.pl.”, „Aby wysłać wiadomość, zaznacz zgodę na przetwarzanie danych.” Kolor błędów `#FF657A` (5,6:1 na tle `#222222`) zamiast domyślnego `#DC3232` (3,44:1 – nie spełniał 4,5:1), a pole z błędem dostaje grubszą ramkę – informacja nie zależy tylko od koloru.
-- **Test** – walidacja sprawdzona wysłaniem pustego formularza, błędnego e-maila, braku zgody i poprawnych danych; Lighthouse (axe-core) dla strony Kontakt: 100/100.
-- **Tryb demo** – lokalny kontener nie ma serwera poczty, więc formularz ma `demo_mode: on` (pomija wysyłkę e-maila). Na produkcji należy to usunąć i skonfigurować SMTP.
+Każde pole ma widoczną etykietę w `<label>`, a wymagane pola są oznaczone tekstem „(wymagane)”, nie tylko gwiazdką czy kolorem; dodatkowo `aria-required="true"`. Pola mają atrybuty `autocomplete` („name”, „email”, „tel”), żeby przeglądarka i czytnik ekranu wiedziały, czego oczekiwać (WCAG 1.3.5 Określenie pożądanego wkładu).
 
-**WCAG 3.3.8 Accessible Authentication (Minimum)** – formularz nie wymaga żadnego testu poznawczego: nie ma CAPTCHA z przepisywaniem znaków, łamigłówki, zadania matematycznego ani pytania-quizu CF7. Pola można wypełniać autouzupełnianiem i wklejać do nich tekst. Ochrona przed spamem: na razie tylko lista zabronionych słów z WordPressa (Ustawienia > Dyskusja), którą sprawdza CF7. Do zrobienia na produkcji: pole-pułapka (np. wtyczka „Honeypot for Contact Form 7”) albo Akismet / Cloudflare Turnstile w trybie niewidocznym – żadne z nich nie wymaga od użytkownika testu poznawczego.
+Pole zgody RODO jest domyślnie niezaznaczone i zawiera link do polityki prywatności. Włączyłem `acceptance_as_validation: on`: przycisk „Wyślij” jest zawsze aktywny, a brak zgody daje komunikat błędu. Domyślnie CF7 po prostu wyłącza przycisk, a wyłączony przycisk jest pomijany przez Tab i nie mówi, czego brakuje.
 
-**WCAG 2.5.8 Target Size (Minimum)** – pola tekstowe i przycisk mają min. 44 px wysokości, pole zgody 24×24 px, a link do polityki prywatności jest w tekście zdania (wyjątek „inline” w kryterium). Wszystkie cele mają co najmniej 24×24 px.
+Komunikaty błędów są po polsku i podpowiadają, co poprawić (WCAG 3.3.1, 3.3.3), np. „Wpisz poprawny adres e-mail, np. jan@przyklad.pl.”, „Aby wysłać wiadomość, zaznacz zgodę na przetwarzanie danych.” Kolor błędów zmieniłem z domyślnego `#DC3232` (3,44:1 na tle – poniżej wymaganego 4,5:1) na `#FF657A` (5,6:1), a pole z błędem dostaje grubszą ramkę, żeby informacja nie zależała tylko od koloru.
 
+Walidację sprawdziłem wysłaniem pustego formularza, błędnego e-maila, braku zgody i poprawnych danych. Lighthouse (axe-core) dla strony Kontakt: 100/100. Lokalny kontener nie ma serwera poczty, więc formularz ma `demo_mode: on` (pomija wysyłkę e-maila); na produkcji trzeba to usunąć i skonfigurować SMTP.
+
+Formularz nie wymaga żadnego testu poznawczego (WCAG 3.3.8 Accessible Authentication): nie ma CAPTCHA z przepisywaniem znaków, łamigłówki, zadania matematycznego ani pytania-quizu CF7. Pola da się wypełniać autouzupełnianiem i wklejać do nich tekst. Ochrona przed spamem to na razie lista zabronionych słów z WordPressa (Ustawienia > Dyskusja), którą sprawdza CF7; na produkcji planuję pole-pułapkę (np. wtyczkę „Honeypot for Contact Form 7”) albo Akismet / Cloudflare Turnstile w trybie niewidocznym – żadne z nich nie wymaga od użytkownika testu poznawczego.
+
+Rozmiary celów (WCAG 2.5.8 Target Size): pola tekstowe i przycisk mają min. 44 px wysokości, pole zgody 24×24 px, a link do polityki prywatności jest w tekście zdania (wyjątek „inline” w kryterium). Wszystkie cele mają co najmniej 24×24 px.
+
+## Preferencje użytkownika i skip link (L3 B2)
+Dodatkowy CSS ze startera, uzupełniony.
+
+Przy `prefers-reduced-motion: reduce` animacje i przejścia są skrócone do 0,01 ms i nie ma płynnego przewijania (sprawdzone emulacją w DevTools: `scroll-behavior: auto`). W trybie wysokiego kontrastu Windows (`forced-colors: active`) przyciski, pola formularza i karty dostają obramowanie w kolorach systemowych (`ButtonText`, `CanvasText`), a fokus w kolorze `Highlight`. Zrzut z emulacji: [`raport/b2/forced-colors.png`](raport/b2/forced-colors.png).
+
+Skip link „Przejdź do treści” jest pierwszym elementem po naciśnięciu Tab; po fokusie robi się widoczny, a Enter przenosi do `#wp--skip-link--target` (link dodaje sam WordPress, wygląd po fokusie to domyślny styl WordPressa). Zrzut: [`raport/b2/skip-link-po-tab.png`](raport/b2/skip-link-po-tab.png).
+
+- Czytnik ekranu – zamiast testu słuchowego VoiceOver sprawdziłem automatycznie strukturę, którą czytnik odczyta (drzewo dostępności i kolejność w DOM, przez Chrome DevTools Protocol). Strona główna: jeden H1 w Okładce, dalej H2 i H3 bez przeskakiwania poziomów; lądmarki w kolejności nagłówek → nawigacja → treść główna → stopka; skip link jest pierwszym elementem strony i prowadzi do istniejącego celu; jedyny obraz ma pełny alt. Formularz na Kontakt czyta się pole po polu: każde pole z widoczną etykietą i „(wymagane)" w tekście, autocomplete (imię, e-mail, telefon), zgoda RODO domyślnie niezaznaczona. Poza tym zrobiłem test słuchowy VoiceOverem (Cmd+F5, Safari) na stronie głównej i Kontakt: skip link był pierwszym elementem po Tabie, nagłówki czytały się po kolei, pola formularza podawały etykietę i stan wymagane. Wszystko działało, bez większych problemów.
+
+## Blueprint (L1 B1)
+[`blueprint-schema.json`](blueprint-schema.json) odtwarza strukturę projektu w Playground: język pl_PL, motyw Twenty Twenty-Five, Contact Form 7, wszystkie 11 stron z mapy strony, 2 kategorie Aktualności, usunięcie domyślnych treści (w tym wpisu „Witaj świecie!”), statyczna strona główna i strona wpisów. Treści i wygląd są w eksporcie ZIP. Bookly usunąłem z blueprintu, bo okazał się niezgodny z SQLite. [`blueprint-ai.json`](blueprint-ai.json) to wersja wygenerowana przez AI do porównania.

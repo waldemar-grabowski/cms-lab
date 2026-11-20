@@ -8,6 +8,7 @@
 | [`lighthouse/po/`](lighthouse/po/) | Lighthouse – stan po L3, te same strony |
 | [`lighthouse/pierwszy-testowy-pomiar.html`](lighthouse/pierwszy-testowy-pomiar.html) | Mój pierwszy, testowy pomiar (stan po zmianach) |
 | [`wave/`](wave/) | WAVE: `1-przed.png`, `2-po-poprawkach-wave.png`, `3-stan-koncowy.png` |
+| [`b2/`](b2/) | L3 B2: skip link po Tab, emulacja trybu wysokiego kontrastu (forced colors) |
 | [`zrzuty/komputer/`](zrzuty/komputer/) | Zrzuty wszystkich stron – 1280 px, pełna długość |
 | [`zrzuty/telefon/`](zrzuty/telefon/) | Zrzuty wszystkich stron – 375 px, pełna długość |
 

@@ -18,7 +18,7 @@ $alt = esc_attr__( 'Mechanicy przy samochodach w warsztacie', 'autoserwis-waldi'
 
 <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:paragraph -->
-<p><?php esc_html_e( 'Osobowe i dostawcze do 3.5 t, także dla małych firm', 'autoserwis-waldi' ); ?></p>
+<p><?php esc_html_e( 'Osobowe i dostawcze do 3,5 t, także dla małych firm', 'autoserwis-waldi' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 

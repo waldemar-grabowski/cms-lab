@@ -24,16 +24,6 @@
       }
     },
     {
-      "step": "installPlugin",
-      "pluginData": {
-        "resource": "wordpress.org/plugins",
-        "slug": "bookly-responsive-appointment-booking-tool"
-      },
-      "options": {
-        "activate": true
-      }
-    },
-    {
       "step": "setSiteOptions",
       "options": {
         "blogname": "Auto-Serwis Waldi",
@@ -47,7 +37,7 @@
     },
     {
       "step": "wp-cli",
-      "command": "wp post delete 2 3 --force"
+      "command": "wp post delete 1 2 3 --force"
     },
     {
       "step": "wp-cli",
@@ -82,11 +72,32 @@
       "command": "wp post create --post_type=page --import_id=108 --post_title='Polityka prywatności' --post_name=polityka-prywatnosci --menu_order=6 --post_status=publish"
     },
     {
+      "step": "wp-cli",
+      "command": "wp post create --post_type=page --import_id=109 --post_title='Oferta' --post_name=oferta --menu_order=7 --post_status=publish"
+    },
+    {
+      "step": "wp-cli",
+      "command": "wp post create --post_type=page --import_id=110 --post_title='Aktualności' --post_name=aktualnosci --menu_order=8 --post_status=publish"
+    },
+    {
+      "step": "wp-cli",
+      "command": "wp post create --post_type=page --import_id=111 --post_title='O nas' --post_name=o-nas --menu_order=9 --post_status=publish"
+    },
+    {
+      "step": "wp-cli",
+      "command": "wp term create category 'Porady' --slug=porady"
+    },
+    {
+      "step": "wp-cli",
+      "command": "wp term create category 'Z warsztatu' --slug=z-warsztatu"
+    },
+    {
       "step": "setSiteOptions",
       "options": {
         "show_on_front": "page",
         "page_on_front": 101,
-        "wp_page_for_privacy_policy": 108
+        "wp_page_for_privacy_policy": 108,
+        "page_for_posts": 110
       }
     }
   ]
