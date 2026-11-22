@@ -67,6 +67,8 @@ AI użyłem do:
 
 Później, przy kończeniu projektu, użyłem agenta w terminalu (Hermes): poprawił separator dziesiętny (3.5 t → 3,5 t) w bazie eksportu ZIP, przepakował eksport, zredagował formatowanie tego README i raportu dostępności (treść liczbowa bez zmian), wygenerował ponownie PDF raportu, odświeżył zrzuty strony głównej i Oferty oraz przeprowadził automatyczny test struktury drzewa dostępności (B2). Słuchowy test VoiceOver zrobiłem sam.
 
+Przy L4 i L5 (MP2) oba motywy – blokowy `mojafirma` i potomny `mf-child` – zbudowałem na starterach z kart zadań: nagłówki, `wp_enqueue_style`, hooki, szablon `page-o-nas.php` i style bloków były w dużej części gotowe, ja dopasowałem je do identyfikacji firmy (paleta, krój nagłówków, dane kontaktowe, długość zajawki) i zdecydowałem o finalnym wyglądzie. AI pomogło złożyć te pliki, sprawdzić motyw na lokalnej witrynie (składnia PHP, kolejność ładowania stylów, hierarchia szablonów, kontrasty), ujednolicić dane kontaktowe firmy w treści strony (adres, telefon, e-mail – spójnie z motywami) i wyłapać błąd, który by mi umknął: Twenty Twenty-One doklejał do zajawki angielski link „Continue reading”, który renderował się na stronie jako zwykły tekst – poprawką jest filtr `excerpt_more` w `functions.php`. Commity i tag `v0.1.0` poszły zgodnie ze schematem z karty L4.
+
 Każdą zmianę sprawdzałem w przeglądarce i na zrzutach ekranu (komputer i telefon). Wyniki audytów są w [`raport/`](raport/) (opis zawartości: [`raport/README.md`](raport/README.md)). Plik `raport/lighthouse/pierwszy-testowy-pomiar.html` to mój pierwszy, testowy pomiar stanu po zmianach.
 
 ## Style globalne i kontrast (L3 G1)
