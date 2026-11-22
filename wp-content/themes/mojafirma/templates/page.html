@@ -1,0 +1,13 @@
+<!-- templates/page.html – statyczna strona (hierarchia: page-{slug} → page → singular → index)
+     Post-title jako H1; strony z H1 w treści (główna, oferta, usługi, kontakt)
+     używają szablonu „Strona bez tytułu” (page-no-title.html). -->
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","layout":{"type":"constrained"}} -->
+<main class="wp-block-group">
+	<!-- wp:post-title {"level":1,"isLink":false,"fontSize":"xx-large"} /-->
+	<!-- wp:post-content {"layout":{"type":"constrained"}} /-->
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->

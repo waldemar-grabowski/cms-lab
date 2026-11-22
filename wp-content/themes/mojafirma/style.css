@@ -1,0 +1,25 @@
+/*
+Theme Name: Moja Firma
+Theme URI: https://github.com/waldemar-grabowski/cms-lab
+Author: Waldemar Grabowski
+Description: Motyw blokowy dla fikcyjnej firmy Auto-Serwis Waldi (MP2, laboratorium CMS, CDV).
+Requires at least: 6.6
+Tested up to: 7.0
+Requires PHP: 7.4
+Version: 0.1.0
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: mojafirma
+Tags: block-patterns, full-site-editing, accessibility-ready
+*/
+
+/*
+Struktura motywu (wp-content/themes/mojafirma):
+
+- style.css   – tylko ten nagłówek, style wizualne trzymam w theme.json
+- theme.json  – paleta i typografia z L3 (Spectagon)
+- templates/  – index.html (wymagany), single, page, archive, 404
+- parts/      – header.html, footer.html
+- patterns/   – hero-cta.php (wzorzec z L2)
+- styles/     – warianty stylu (na razie brak)
+*/
