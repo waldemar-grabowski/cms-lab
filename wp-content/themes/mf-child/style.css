@@ -1,0 +1,53 @@
+/*
+Theme Name:   MF Child
+Template:     twentytwentyone
+Description:  Motyw potomny do MP2 (laboratorium CMS, CDV) – Auto-Serwis Waldi na bazie Twenty Twenty-One.
+Author:       Waldemar Grabowski
+Version:      1.0.0
+Requires PHP: 7.4
+License:      GNU General Public License v2 or later
+Text Domain:  mf-child
+*/
+
+/*
+Nadpisuję tylko to, czego potrzebuję – resztę mf-child dziedziczy z Twenty Twenty-One.
+Kolor marki z identyfikacji (MP1/L3) to pomarańcz #FF9B5E na ciemnym tle #222222,
+ale TT1 jest jasny (tło #fff, tekst #28303d). Czysty pomarańcz marki miałby na białym
+za niski kontrast (2,1:1), więc linki dostają przygaszony odcień #b45309 – 5,0:1,
+ponad wymaganymi 4,5:1 (WCAG AA).
+*/
+
+:root {
+	--mf-accent: #b45309;
+	--mf-heading-font: Georgia, "Times New Roman", serif;
+}
+
+a {
+	color: var(--mf-accent);
+}
+
+/* Krój nagłówków: szeryfowe nagłówki na tle bezszeryfowego tekstu TT1 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.wp-block-heading,
+.entry-title {
+	font-family: var(--mf-heading-font);
+}
+
+/* Notka doklejana filtrem the_content (functions.php, L5 G3) */
+.mf-note {
+	margin-top: 1.5rem;
+	padding: 0.75rem 1.25rem;
+	border-left: 4px solid var(--mf-accent);
+	background: #f4ede6;
+}
+
+/* Ślad po szablonie page-o-nas.php (L5 G2) – widać w DevTools, że strona używa potomka */
+.mf-o-nas {
+	border-left: 6px solid var(--mf-accent);
+	padding-left: 1.25rem;
+}
