@@ -137,5 +137,67 @@ Skip link „Przejdź do treści” jest pierwszym elementem po naciśnięciu Ta
 
 - Czytnik ekranu – zamiast testu słuchowego VoiceOver sprawdziłem automatycznie strukturę, którą czytnik odczyta (drzewo dostępności i kolejność w DOM, przez Chrome DevTools Protocol). Strona główna: jeden H1 w Okładce, dalej H2 i H3 bez przeskakiwania poziomów; lądmarki w kolejności nagłówek → nawigacja → treść główna → stopka; skip link jest pierwszym elementem strony i prowadzi do istniejącego celu; jedyny obraz ma pełny alt. Formularz na Kontakt czyta się pole po polu: każde pole z widoczną etykietą i „(wymagane)" w tekście, autocomplete (imię, e-mail, telefon), zgoda RODO domyślnie niezaznaczona. Poza tym zrobiłem test słuchowy VoiceOverem (Cmd+F5, Safari) na stronie głównej i Kontakt: skip link był pierwszym elementem po Tabie, nagłówki czytały się po kolei, pola formularza podawały etykietę i stan wymagane. Wszystko działało, bez większych problemów.
 
+## Motyw blokowy mojafirma (L4)
+
+Do tej pory dostosowywałem Twenty Twenty-Five (L2–L3). Na L4 zbudowałem własny motyw blokowy [`wp-content/themes/mojafirma/`](wp-content/themes/mojafirma) – wszystko w plikach motywu, a zmiany wyglądu trzymam w `theme.json`, nie w Dodatkowym CSS.
+
+Struktura:
+
+- [`style.css`](wp-content/themes/mojafirma/style.css) – sam nagłówek motywu,
+- [`theme.json`](wp-content/themes/mojafirma/theme.json) – paleta i typografia Spectagon z L3 (ten sam plik co w korzeniu repo),
+- [`parts/header.html`](wp-content/themes/mojafirma/parts/header.html) i [`parts/footer.html`](wp-content/themes/mojafirma/parts/footer.html) – nazwa witryny, menu, przycisk „Umów wizytę online”, dane kontaktowe w stopce,
+- [`patterns/hero-cta.php`](wp-content/themes/mojafirma/patterns/hero-cta.php) – wzorzec z L2, przeniesiony z katalogu `patterns/` repo (slug `mojafirma/hero-cta`, domena tekstowa `mojafirma`),
+- `templates/` – szablony z G2 poniżej.
+
+### Szablony i hierarchia (L4 G2)
+
+Szablony `single`, `page`, `archive` i `404` zbudowałem na podstawie `index.html` ze startera (pętla `wp:query` z `wp:post-template`, paginacja i `query-no-results`). W edytorze witryny (Wygląd → Edytor → Szablony) sprawdziłem, którego szablonu używa WordPress dla każdego typu widoku:
+
+| Widok | Użyty szablon | Kolejność dopasowania |
+|---|---|---|
+| Strona główna (statyczna) | `page.html` | front-page → page → singular → index |
+| Aktualności (strona wpisów) | `index.html` | home → index |
+| Pojedynczy wpis | `single.html` | single-post → single → singular → index |
+| Strona (np. Kontakt) | `page.html` | page-{slug} → page → singular → index |
+| Archiwum kategorii (np. Porady) | `archive.html` | category → archive → index |
+| Nieistniejący adres | `404.html` | 404 → index |
+
+W `single.html` po treści wpisu dodałem separator, nawigację poprzedni/następny i komentarze (`wp:comments` z `wp:comment-template` i formularzem). W `404.html` – komunikat i wyszukiwarkę (`wp:search`).
+
+Jedna rzecz do dopracowania: strony głównej, Oferty, Usług i Kontaktu mają własny nagłówek H1 w treści (z czasów L2–L3, pod szablon „Strona bez tytułu” z TT5). Gdy dałem `wp:post-title` w `page.html`, strony dostały podwójny H1 – zauważyłem to przeglądając stronę po stronie. Dodałem więc drugi szablon, [`page-no-title.html`](wp-content/themes/mojafirma/templates/page-no-title.html) („Strona bez tytułu”), bez tytułu strony – i przypisałem go tym czterem stronom w edytorze (Wygląd → Edytor → Szablony). Teraz każda strona ma dokładnie jeden H1.
+
+Zrzuty stron w motywie: strona główna ([komputer](`raport/zrzuty/motywy/01-strona-glowna-mojafirma.png`), [telefon](`raport/zrzuty/motywy/02-strona-glowna-mobilnie.png`)) i [strona 404](`raport/zrzuty/motywy/06-404-mojafirma.png`).
+
+### Create Block Theme, Git i eksport (L4 G3)
+
+Wtyczka **Create Block Theme** z katalogu WordPress.org: edytuję nagłówek/stopkę i paletę w edytorze witryny, a opcja **„Zapisz zmiany w motywie”** zapisuje te zmiany do plików motywu (`parts/*.html`, `theme.json`) – dzięki temu nic nie ginie w bazie i wszystko przechodzi przez Gita. **„Eksportuj”** pakuje motyw do ZIP-a z katalogiem motywu wewnątrz.
+
+Motyw wersjonuję w Gicie oddzielnie od treści (`wp-content/` jest woluminem kontenera z `docker-compose.yml`):
+
+```bash
+git add wp-content/themes/mojafirma
+git commit -m "..."        # commity z G1–G3 pod opisowymi komunikatami
+git tag -a v0.1.0 -m "Pierwsza wersja motywu MP2"
+```
+
+Tag `v0.1.0` wskazuje stan po L4, ZIP z eksportu jest w załączniku wydania na GitHubie. W `.gitignore` dodałem `*.zip`, `node_modules/` i `.DS_Store`.
+
+## Motyw potomny mf-child i PHP (L5)
+
+Druga ścieżka MP2: motyw potomny [`wp-content/themes/mf-child/`](wp-content/themes/mf-child) po **Twenty Twenty-One** (klasyczny motyw rodzic). Zamiast edytować rodzica (aktualizacja nadpisze moje zmiany) – potomek nadpisuje tylko wybrane pliki.
+
+- [`style.css`](wp-content/themes/mf-child/style.css) – nagłówek z `Template: twentytwentyone` (nazwa katalogu rodzica; gdyby była błędna, WordPress nie uznałby motywu za potomka), kolor linków i krój nagłówków. Kolor marki z MP1/L3 (`#FF9B5E`) na białym tle TT1 miałby tylko 2,1:1, więc linki dostają przygaszony odcień `#b45309` – **5,0:1** na białym (wymagane 4,5:1). Nagłówki przestawiłem na szeryfowy Georgia – widoczna zmiana kroju bez ładowania fontu z zewnątrz (RODO jak w L3).
+- [`functions.php`](wp-content/themes/mf-child/functions.php) – hooki z G3/G4, wszystkie funkcje z prefiksem `mf_`, teksty w `__()`/`esc_html__()` z domeną `mf-child`:
+  - `wp_enqueue_scripts` → `mf_child_enqueue_styles()`: arkusz potomka z zależnością od `twenty-twenty-one-style` (uchwyt stylu rodzica), wersja z nagłówka `wp_get_theme()->get( 'Version' )`, żeby cache przeglądarki odświeżał się przy zmianach,
+  - `after_setup_theme` → `mf_child_setup()`: `load_child_theme_textdomain()` z katalogiem `languages/`,
+  - `excerpt_length` → `mf_excerpt_length()`: zajawki po 25 słów zamiast 55 (krótsze karty wpisów na listach),
+  - `excerpt_more` → `mf_excerpt_more()`: koniec zajawki jako sam wielokropek, priorytet 20 – TT1 sam podmienia ten filtr w priorytecie 10 („Continue reading” z linkiem), a functions.php rodzica ładuje się po potomku, więc z priorytetem 10 wygrywałoby TT1. Bez tego filtru lead na „O nas” wypisywał znaki znaczników linku jako dosłowny tekst,
+  - `the_content` → `mf_add_note()`: notka kontaktowa pod pojedynczym wpisem, ale tylko przy `is_single() && in_the_loop() && is_main_query()` – bez tego notka doklejałaby się też do widżetów i list; filtr **zawsze** zwraca `$content`, inaczej strona straciłaby treść,
+  - `init` → `mf_register_block_styles()`: style bloków `Z cieniem` (`mf-cien`, cień w kolorze marki) dla `core/button` i `Karta` (`mf-karta`, padding + obramowanie + zaokrąglenie) dla `core/group`.
+- [`page-o-nas.php`](wp-content/themes/mf-child/page-o-nas.php) – szablon ze hierarchii `page-{slug}` tylko dla strony „O nas” (slug `o-nas`). Hierarchia: `page-o-nas.php` (potomek) → `page.php` (rodzic) → `index.php`; plik potomka ma pierwszeństwo. TT1 otwiera `<main>` w `header.php`, więc w szablonie wypisuję tylko `<article>` z sekcją danych warsztatu (adres, klikalny telefon `tel:`, e-mail – każda wartość przez `esc_html()`/`esc_url()`). `post_class( 'mf-o-nas' )` dokłada klasę, po której łatwo poznać w przeglądarce, że strona użyła szablonu potomka, a nie `page.php` rodzica – reszta stron wygląda jak dotąd.
+
+Na „O nas” wstawiłem jeszcze w edytorze kartę z przyciskiem w nowych stylach: grupa ze stylem **Karta** (`mf-karta`) z przyciskiem **Z cieniem** (`mf-cien`, cień w kolorze marki). Zrzut edytora z wybranym stylem w panelu Style: [`05-style-blokow-edytor.png`](raport/zrzuty/motywy/05-style-blokow-edytor.png). Efekt na stronie: [`03-o-nas-mfc.png`](raport/zrzuty/motywy/03-o-nas-mfc.png), a notka doklejona przez filtr pod wpisem: [`04-wpis-notka-mfc.png`](raport/zrzuty/motywy/04-wpis-notka-mfc.png).
+
 ## Blueprint (L1 B1)
+
 [`blueprint-schema.json`](blueprint-schema.json) odtwarza strukturę projektu w Playground: język pl_PL, motyw Twenty Twenty-Five, Contact Form 7, wszystkie 11 stron z mapy strony, 2 kategorie Aktualności, usunięcie domyślnych treści (w tym wpisu „Witaj świecie!”), statyczna strona główna i strona wpisów. Treści i wygląd są w eksporcie ZIP. Bookly usunąłem z blueprintu, bo okazał się niezgodny z SQLite. [`blueprint-ai.json`](blueprint-ai.json) to wersja wygenerowana przez AI do porównania.

@@ -11,5 +11,6 @@
 | [`b2/`](b2/) | L3 B2: skip link po Tab, emulacja trybu wysokiego kontrastu (forced colors) |
 | [`zrzuty/komputer/`](zrzuty/komputer/) | Zrzuty wszystkich stron – 1280 px, pełna długość |
 | [`zrzuty/telefon/`](zrzuty/telefon/) | Zrzuty wszystkich stron – 375 px, pełna długość |
+| [`zrzuty/motywy/`](zrzuty/motywy/) | MP2: motywy z L4/L5 – `mojafirma` (strona główna komputer/telefon, 404) i `mf-child` („O nas” z kartą, wpis z notką, edytor z panelem Style) |
 
 Numeracja zrzutów: 01 strona główna, 02 Usługi, 03 Mechanika i diagnostyka, 04 Opony i klimatyzacja, 05 Oferta, 06 Dla firm, 07 Umów wizytę, 08 Aktualności, 09 przykładowy wpis, 10 Kontakt, 11 Polityka prywatności, 12 O nas.
